@@ -14,15 +14,15 @@ export const PhoneForm = () => {
   const contactList = useSelector(selectContacts);
   const dispatch = useDispatch();
   const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
+  const [number, setNumber] = useState('');
 
   const handleChange = evt => {
     const { name, value } = evt.target;
-    name === 'number' ? setPhone(value) : setName(value);
+    name === 'number' ? setNumber(value) : setName(value);
   };
 
-  const onSubmit = (name, phone) => {
-    const contact = { name, phone };
+  const onSubmit = (name, number) => {
+    const contact = { name, number };
     if (
       contactList.find(
         userCard => userCard.name.toLowerCase() === contact.name.toLowerCase()
@@ -36,9 +36,9 @@ export const PhoneForm = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    onSubmit(name, phone);
+    onSubmit(name, number);
     setName('');
-    setPhone('');
+    setNumber('');
   };
   return (
     <FormInput onSubmit={handleSubmit}>
@@ -57,7 +57,7 @@ export const PhoneForm = () => {
       <label>
         Number
         <InputNumber
-          value={phone}
+          value={number}
           onChange={handleChange}
           type="tel"
           name="number"
