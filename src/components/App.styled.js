@@ -1,10 +1,10 @@
 import { styled } from 'styled-components';
 
 export const Section = styled.div`
-  margin-left: 20px;
+  /* margin-left: 20px;
   border: 1px solid black;
-  width: 350px;
+  width: 350px; */
   padding: 15px;
-  background-color: aquamarine;
-  border-radius: 10%;
+  background-color: #00bcd4;
+  /* border-radius: 10%; */
 `;
